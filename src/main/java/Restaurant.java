@@ -62,4 +62,11 @@ public class Restaurant {
         return name;
     }
 
+    public int getOrderTotal(List<String> clickedItems) throws itemNotFoundException {
+        int total = 0;
+        for (String clickedItem : clickedItems) {
+            total += findItemByName(clickedItem).getPrice();
+        }
+        return total;
+    }
 }
